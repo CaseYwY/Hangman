@@ -1,0 +1,7 @@
+import random
+
+Randint = random.randint(0, 3)
+Riddle = ("pyt---", "jav-", "swi--", "jav-------")
+Answer = ("python", "java", "swift", "javascript")
+Word = input(f"H A N G M A N\nGuess the word {Riddle[Randint]}:")
+print("You survived!") if Word == Answer[Randint] else print("You lost!")
