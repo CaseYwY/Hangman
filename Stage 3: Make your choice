@@ -1,0 +1,5 @@
+import random
+
+Lexicon = ("python", "java", "swift", "javascript")
+Word = input("H A N G M A N\nGuess the word:")
+print("You survived!") if Word == Lexicon[random.randint(0, 3)] else print("You lost!")
