@@ -1,0 +1,16 @@
+import random
+Words = random.choice(["python", "java", "swift", "javascript"])
+print("H A N G M A N\n")
+Hidden_Answer = list(len(Words) * '-')
+for times in range(8):
+    print(''.join(Hidden_Answer))
+    input_Letter = input("Input a letter: ")
+    if input_Letter in Words:
+        for Check in range(len(Words)):
+            if Words[Check] == input_Letter:
+                Hidden_Answer[Check] = input_Letter
+                if Hidden_Answer == Words:
+                    print()
+    else:
+        print("That letter doesn't appear in the word.")
+print('\n' + "Thanks for playing!")
