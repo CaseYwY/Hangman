@@ -1,0 +1,26 @@
+import random
+
+words = random.choice(["python", "java", "swift", "javascript"])
+hidden_answer = list(len(words) * '-')
+attempts = 8
+typed = ""
+print('H A N G M A N\nType "play" to play the game, "results" to show the scoreboard, and "exit" to quit:')
+while attempts > 0 and hidden_answer != list(words):
+    guess = input(f"{''.join(hidden_answer)}\nInput a letter: \n")
+    if len(guess) != 1:
+        print("Please, input a single letter.\n")
+        continue
+    elif not (guess.islower() and guess.isalpha()):
+        print("Please, enter a lowercase letter from the English alphabet.\n")
+        continue
+    if guess in typed:
+        print("You've already guessed this letter.\n")
+    elif guess in words:
+        for check in range(len(words)):
+            if words[check] == guess:
+                hidden_answer[check] = guess
+    else:
+        print("That letter doesn't appear in the word.\n")
+        attempts -= 1
+    typed += guess
+print(f"""You guessed the word {words}!\nYou survived!""") if hidden_answer == list(words) else print("You lost!")
