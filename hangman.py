@@ -1,3 +1,4 @@
-print(f"""
+word = input(f"""
 H A N G M A N
-The game will be available soon.""")
+Guess the word:""")
+print("You survived!") if word == "python" else print("You lost!")
